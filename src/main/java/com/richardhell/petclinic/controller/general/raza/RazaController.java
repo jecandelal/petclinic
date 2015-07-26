@@ -4,6 +4,7 @@ import com.richardhell.petclinic.model.Raza;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,7 +24,6 @@ public class RazaController {
         model.addAttribute("raza", new Raza());
         return "general/raza";
     }
-    
 
     @RequestMapping("update/{id}")
     public String update(@PathVariable("id") Long id, Model model) {
@@ -37,15 +37,20 @@ public class RazaController {
 
     @RequestMapping("save")
     public String save(Raza raza) {
-        
+
         service.save(raza);
         return "redirect:/gen/raza";
     }
 
     @RequestMapping("delete/{id}")
     public String delete(@PathVariable("id") Long id) {
-        
+
         service.delete(new Raza(id));
+        return "redirect:/gen/raza";
+    }
+
+    @ExceptionHandler(Exception.class)
+    public String handleConflict() {
         return "redirect:/gen/raza";
     }
 
