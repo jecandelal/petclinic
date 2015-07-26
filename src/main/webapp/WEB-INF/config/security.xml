@@ -20,8 +20,8 @@
         <access-denied-handler error-page="/"/>
         
   
-        <intercept-url pattern="/com/**" access="isAuthenticated()" /> 
-        <intercept-url pattern="/gen/**" access="isAuthenticated()" /> 
+        <intercept-url pattern="/com/**" access="hasAnyRole('ADMIN','ASIS')" /> 
+        <intercept-url pattern="/gen/**" access="hasAnyRole('ADMIN','ASIS')" /> 
         <intercept-url pattern="/adm/**" access="hasAnyRole('ADMIN')" /> 
         <intercept-url pattern="/**" access="permitAll" />
     </http>

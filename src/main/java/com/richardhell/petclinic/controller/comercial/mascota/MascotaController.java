@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("com/especie")
+@RequestMapping("com/mascota")
 public class MascotaController {
 
 }
