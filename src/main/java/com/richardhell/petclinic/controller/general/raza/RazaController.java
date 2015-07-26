@@ -23,6 +23,7 @@ public class RazaController {
         model.addAttribute("raza", new Raza());
         return "general/raza";
     }
+    
 
     @RequestMapping("update/{id}")
     public String update(@PathVariable("id") Long id, Model model) {
