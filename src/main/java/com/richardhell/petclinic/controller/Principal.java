@@ -10,7 +10,7 @@ public class Principal {
 
     @RequestMapping("/")
     public String index() {
-        return "test/index";
+        return "redirect:/com/atencion";
     }
 
     @RequestMapping("login")

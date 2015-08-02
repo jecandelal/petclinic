@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "cli_visita")
@@ -43,7 +44,7 @@ public class Visita implements Serializable {
     private String dieta;
 
     @Column(name = "proxima_visita")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date proximaVisita;
 
     @ManyToOne(fetch=FetchType.LAZY)
@@ -54,6 +55,9 @@ public class Visita implements Serializable {
     @JoinColumn(name = "id_veterinario")
     private Veterinario veterinario;
 
+    @Transient
+    private boolean finalizado;
+    
     public Visita() {}
 
     public Visita(Object id) {
@@ -138,4 +142,14 @@ public class Visita implements Serializable {
     public void setVeterinario(Veterinario veterinario) {
         this.veterinario = veterinario;
     }
+
+    public boolean isFinalizado() {
+        return finalizado;
+    }
+
+    public void setFinalizado(boolean finalizado) {
+        this.finalizado = finalizado;
+    }
+    
+    
 }

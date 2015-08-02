@@ -1,5 +1,8 @@
 <%@tag description="General Layout" pageEncoding="UTF-8"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
+<%@attribute name="title" required="true"%>
+<%@attribute name="js" fragment="true"%>
 
 <!DOCTYPE html>
 <html>
@@ -9,7 +12,12 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link rel="stylesheet"  href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css" type="text/css" />
         <link rel="stylesheet"  href="${pageContext.request.contextPath}/petclinic/css/style.css" type="text/css" />
-        <title>Pet Clinic</title>
+
+        <script type="text/javascript" src="${pageContext.request.contextPath}/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/chained/chained.min.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
+
+        <title>Pet Clinic - ${title}</title>
     </head>
     <body>
 
@@ -17,7 +25,7 @@
             <jsp:include page="/WEB-INF/tags/header.jsp"/>
         </sec:authorize>
 
-        
+
         <div class="container-fluid">
             <div class="row">
 
@@ -38,6 +46,4 @@
         </div>
 
     </body>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
 </html>

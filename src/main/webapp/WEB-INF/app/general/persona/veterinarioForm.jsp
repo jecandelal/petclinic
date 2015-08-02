@@ -1,7 +1,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<t:wrapper>
+<t:wrapper title="Veterinario">
     <h1 class="page-header"> Veterinario </h1>
 
     <form action="${pageContext.request.contextPath}/gen/veterinario/save" method="post">

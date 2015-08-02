@@ -1,8 +1,8 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<t:wrapper>
-    <h1 class="page-header"> Personal Administrativo </h1>
+<t:wrapper title="Personal">
+    <h1 class="page-header"> Personal </h1>
 
     <form action="${pageContext.request.contextPath}/adm/personal/save" method="post">
 

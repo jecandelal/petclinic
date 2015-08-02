@@ -1,9 +1,9 @@
 
 <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
-        <li class="active"><a href="#">Atención</a></li>
-        <li><a href="#">Propietarios</a></li>
-        <li><a href="#">Mascotas</a></li>
+        <li><a href="${pageContext.request.contextPath}/com/atencion">Atención</a></li>
+        <li><a href="${pageContext.request.contextPath}/com/propietario">Propietarios</a></li>
+        <li><a href="${pageContext.request.contextPath}/com/mascota">Mascotas</a></li>
     </ul>
     <ul class="nav nav-sidebar">
         

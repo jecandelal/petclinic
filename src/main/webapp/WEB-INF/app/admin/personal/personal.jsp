@@ -2,7 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>  
 
-<t:wrapper>
+<t:wrapper  title="Personal">
     <a href="${pageContext.request.contextPath}/adm/personal/new" class="pull-right btn btn-primary"> Nuevo</a>
     <h1 class="page-header"> Personal </h1>
 

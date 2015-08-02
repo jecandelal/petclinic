@@ -13,13 +13,15 @@
     
     <mvc:resources mapping="/**" location="/public/" />
     
-    <bean id="paramResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
-        <property name="paramName" value="action" /> 
+    <bean class="org.springframework.web.servlet.view.XmlViewResolver">
+        <property name="location" value="/WEB-INF/config/excel.xml"/> 
+        <property name="order" value="1"/>
     </bean>
     
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/WEB-INF/app/" />
         <property name="suffix" value=".jsp"/> 
+        <property name="order" value="1"/>
     </bean>
 </beans>
