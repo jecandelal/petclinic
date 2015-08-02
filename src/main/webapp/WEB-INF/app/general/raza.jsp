@@ -17,23 +17,26 @@
 
         
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Raza" name="nombre" value="${raza.nombre}">
+            <input type="text" class="form-control" placeholder="Raza" name="nombre" value="${raza.nombre}" required="">
         </div>
 
         <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="${pageContext.request.contextPath}/gen/raza" class="btn btn-link">Cancelar</a>
     </form>
 
     <br/>
+    
     <table class="table table-striped">
         <tr>
-            <th>Especie</th>
-            <th>Raza</th>
-            <th>Acciones</th>
+            <th class="col-md-10">Raza</th>
+            <th class="col-md-2">Acciones</th>
         </tr>
         <c:forEach items="${razas}" var="r"  >
             <tr>
-                <td> ${r.especie.nombre}</td>
-                <td> ${r.nombre}</td>
+                <td> 
+                    ${r.nombre} <br/>
+                    <span class="text-muted small"> ${r.especie.nombre}</span>
+                </td>
                 <td>
                     <a href="${pageContext.request.contextPath}/gen/raza/update/${r.id}">Editar</a> 
                     <a href="${pageContext.request.contextPath}/gen/raza/delete/${r.id}">Eliminar</a>
