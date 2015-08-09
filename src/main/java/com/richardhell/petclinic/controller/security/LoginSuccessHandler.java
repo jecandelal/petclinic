@@ -26,8 +26,7 @@ public class LoginSuccessHandler  extends SimpleUrlAuthenticationSuccessHandler 
         
         request.getSession().setAttribute("USUARIO_AUTENTICADO", usuario);
         
-        this.setDefaultTargetUrl("/");
-        
+        this.setDefaultTargetUrl("/com/mascota");
         
         
         super.onAuthenticationSuccess(request, response, auth);

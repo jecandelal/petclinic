@@ -11,38 +11,46 @@ import com.richardhell.petclinic.dao.VisitaDAO;
 import com.richardhell.petclinic.model.Visita;
 
 @Repository
-public class VisitaDAOH extends HibernateTemplate implements VisitaDAO{
+public class VisitaDAOH extends HibernateTemplate implements VisitaDAO {
 
     @Autowired
-    public VisitaDAOH(SessionFactory sessionFactory){
+    public VisitaDAOH(SessionFactory sessionFactory) {
         super(sessionFactory);
     }
 
     @Override
-    public Visita find(Visita t){
+    public Visita find(Visita t) {
         Criteria criteria = this.getSession().createCriteria(Visita.class);
         criteria.add(Restrictions.eq("id", t.getId()));
         return (Visita) criteria.uniqueResult();
     }
 
     @Override
-    public List<Visita> all(){
+    public List<Visita> all() {
         Criteria criteria = this.getSession().createCriteria(Visita.class);
         return criteria.list();
     }
 
     @Override
-    public void saveDAO(Visita t){
+    public void saveDAO(Visita t) {
         this.save(t);
     }
 
     @Override
-    public void updateDAO(Visita t){
+    public void updateDAO(Visita t) {
         this.merge(t);
     }
 
     @Override
-    public void deleteDAO(Visita t){
+    public void deleteDAO(Visita t) {
         this.delete(t);
     }
+
+    @Override
+    public List<Visita> allFinalizada() {
+        Criteria criteria = this.getSession().createCriteria(Visita.class);
+        criteria.add(Restrictions.isNotNull("fechaSalida"));
+        return criteria.list();
+    }
+
 }
